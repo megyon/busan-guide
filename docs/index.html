@@ -248,10 +248,27 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const navbar = document.querySelector(".navbar");
-        const content = document.querySelector("section"); // 또는 #wrapper, #content 등
-        if (navbar && content) {
-          const height = navbar.offsetHeight;
-          content.style.paddingTop = height + "px";
+        const sections = document.querySelectorAll("section");
+    
+        if (navbar && sections.length > 0) {
+          const navHeight = navbar.offsetHeight;
+    
+          sections.forEach(section => {
+            section.style.paddingTop = navHeight + "px";
+          });
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        const navbar = document.querySelector(".navbar");
+        const sections = document.querySelectorAll("section");
+      
+        if (navbar && sections.length > 0) {
+          const navHeight = navbar.offsetHeight;
+      
+          sections.forEach(section => {
+            section.style.paddingTop = navHeight + "px";
+          });
         }
       });
     </script>

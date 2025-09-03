@@ -36,11 +36,20 @@
         height: auto;
         vertical-align: middle;
       }
+
+      #top-button {
+        display: none;
+        position: fixed !important;
+        bottom: 15px;
+        right: 15px;
+        color: lightpink;
+        z-index: 999;
+      }
     </style>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand bg-body-tertiary fixed-top" style="overflow-x: auto;">
+    <nav class="navbar navbar-expand bg-body-tertiary fixed-top" style="overflow-x: auto; background-color: dodgerblue !important;">
       <div class="container-fluid px-0">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav flex-row flex-nowrap overflow-auto align-items-center" style="white-space: nowrap; font-size: 15px;">
@@ -461,7 +470,6 @@
         <div class="row">
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
-              <!-- <img src="https://placehold.co/600x400" class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">💡 電源・コンセントに関する注意点</h5>
                 <p class="card-text">
@@ -471,13 +479,11 @@
                   もしプラグを忘れてしまった場合は、ホテルのフロントで貸し出してくれることもあるので、遠慮せずに尋ねてみましょう。<br>
                   最近のホテルでは、USBポートが備え付けられていることもあり、スマートフォンなどの充電が直接できて便利です。
                 </p>
-                <!-- <a href="#" target="_blank" class="btn btn-primary">Go somewhere</a> -->
               </div>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
-              <!-- <img src="https://placehold.co/600x400" class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">📱 韓国でのスマホ利用について</h5>
                 <p class="card-text">
@@ -495,13 +501,11 @@
                   <br>
                   また、ドコモのahamoや楽天モバイルなど、一部の通信プランではSIMの入れ替えなしで国際ローミングが利用できる場合があります。事前に利用可能かどうか確認しておくと安心です。
                 </p>
-                <!-- <a href="#" target="_blank" class="btn btn-primary">Go somewhere</a> -->
               </div>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
-              <!-- <img src="https://placehold.co/600x400" class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">🚻 韓国のトイレ事情について</h5>
                 <p class="card-text">
@@ -513,13 +517,16 @@
                   ちなみに、韓国語で「トイレ」は「화장실（ファジャンシル）」といいます。<br>
                   覚えておくと、現地で案内表示を見つけやすくなりますよ。
                 </p>
-                <!-- <a href="#" target="_blank" class="btn btn-primary">Go somewhere</a> -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <a id="top-button" class="top-button" href="#" style="color: dodgerblue">
+      <i class="far fa-arrow-alt-circle-up fa-2x"></i>
+    </a>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
@@ -537,6 +544,15 @@
       }
       document.addEventListener("DOMContentLoaded", applyNavbarPadding);
       window.addEventListener("resize", applyNavbarPadding);
+
+      window.onscroll = function() {
+        let btn = document.getElementById("top-button");
+        if (document.documentElement.scrollTop > 200) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
     </script>
   </body>
 </html>

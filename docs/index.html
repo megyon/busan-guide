@@ -629,6 +629,15 @@
           btn.style.display = "none";
         }
       };
+
+      // キャラセルはDOMが完全にロードされた後に初期化します
+      document.addEventListener("DOMContentLoaded", function () {
+        const carouselElement = document.querySelector('#carousel1');
+        const carousel = new bootstrap.Carousel(carouselElement, {
+          touch: true,
+          interval: false
+        });
+      });
     </script>
   </body>
 </html>

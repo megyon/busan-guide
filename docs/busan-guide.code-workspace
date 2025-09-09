@@ -3,6 +3,9 @@
 		{
 			"name": "busan-guide",
 			"path": ".."
+		},
+		{
+			"path": "../../meguyon"
 		}
 	],
 	"settings": {}

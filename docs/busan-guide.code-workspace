@@ -6,6 +6,10 @@
 		},
 		{
 			"path": "../../meguyon"
+		},
+		{
+			"name": "invitation",
+			"path": "../../invitation"
 		}
 	],
 	"settings": {}
